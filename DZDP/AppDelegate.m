@@ -7,7 +7,7 @@
 //
 
 #import "AppDelegate.h"
-#import "DetailViewController.h"
+#import "LYTabBarController.h"
 
 @interface AppDelegate ()
 
@@ -18,6 +18,20 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
+    
+    NSDictionary *dict1 = [NSDictionary  dictionaryWithObjectsAndKeys:@"HomePageViewController", kViewController,@"home_footbar_icon_dianping",kNormalImage, @"home_footbar_icon_dianping_pressed", kSelectedImage, @"首页", kTitleName, nil];
+    NSDictionary *dict2 = [NSDictionary  dictionaryWithObjectsAndKeys:@"GroupByViewController", kViewController,@"home_footbar_icon_group",kNormalImage, @"home_footbar_icon_group_pressed", kSelectedImage, @"团购", kTitleName, nil];
+    NSDictionary *dict3 = [NSDictionary  dictionaryWithObjectsAndKeys:@"FindViewController", kViewController,@"home_footbar_icon_found",kNormalImage, @"home_footbar_icon_found_pressed", kSelectedImage, @"发现", kTitleName, nil];
+    NSDictionary *dict4 = [NSDictionary  dictionaryWithObjectsAndKeys:@"MySelfViewController", kViewController,@"home_footbar_icon_my",kNormalImage, @"home_footbar_icon_my_pressed", kSelectedImage, @"我的", kTitleName, nil];
+    
+    NSArray *arr = @[dict1, dict2, dict3, dict4];
+    
+    LYTabBarController *lyTabBar = [[LYTabBarController alloc] init];
+    //重写父类的setViewControllers方法
+    [lyTabBar setViewControllers:arr];
+    
+    self.window.rootViewController = lyTabBar;
+    
     return YES;
 }
 

@@ -1,5 +1,5 @@
 //
-//  MasterViewController.h
+//  HomePageViewController.h
 //  DZDP
 //
 //  Created by yangL on 15/3/29.
@@ -8,8 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface MasterViewController : UITableViewController
-
+@interface HomePageViewController : UIViewController
 
 @end
-
